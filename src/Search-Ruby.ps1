@@ -23,4 +23,3 @@ function Search-Ruby {
         }
     }
 }
-Set-Alias -Name rfind -Value Search-Ruby

@@ -2,7 +2,28 @@
 $ErrorActionPreference = "Stop"
 Set-StrictMode -Version Latest
 
-
+<#
+.SYNOPSIS
+    Searches for alias definitions in PowerShell files.
+.PARAMETER Path
+    The path to search in. Defaults to the current directory.
+.PARAMETER Name
+    The name that any returned aliases must match exactly.
+.PARAMETER NameLike
+    The name that any returned aliases must match using wildcard matching.
+.PARAMETER NameMatch
+    The name that any returned aliases must match using regular expression matching.
+.PARAMETER First
+    The number of aliases to return from the beginning of the list.
+.PARAMETER Last
+    The number of aliases to return from the end of the list.
+.PARAMETER Skip
+    The number of aliases to skip from the beginning of the list.
+.PARAMETER SkipLast
+    The number of aliases to skip from the end of the list.
+.EXAMPLE
+    Get-PwshAliasDefinition -Path ~/ -Name z
+#>
 function Get-PwshAliasDefinition {
     [CmdletBinding(DefaultParameterSetName = "ByName")]
     param(
